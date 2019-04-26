@@ -1,0 +1,182 @@
+fileFormatVersion: 2
+guid: d3d4335f0289146c085c2d674f8db7e2
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: CINEMA_4D_Editor
+    100002: flower_leaves
+    100004: leave
+    100006: middle
+    100008: middle_1
+    100010: Null
+    100012: Pyramid
+    100014: Pyramid_1
+    100016: Pyramid_11
+    100018: Pyramid_13
+    100020: Pyramid_16
+    100022: Pyramid_18
+    100024: Pyramid_2
+    100026: Pyramid_20
+    100028: Pyramid_22
+    100030: Pyramid_4
+    100032: Pyramid_6
+    100034: Pyramid_8
+    100036: Pyramid_9
+    100038: //RootNode
+    100040: varsi
+    400000: CINEMA_4D_Editor
+    400002: flower_leaves
+    400004: leave
+    400006: middle
+    400008: middle_1
+    400010: Null
+    400012: Pyramid
+    400014: Pyramid_1
+    400016: Pyramid_11
+    400018: Pyramid_13
+    400020: Pyramid_16
+    400022: Pyramid_18
+    400024: Pyramid_2
+    400026: Pyramid_20
+    400028: Pyramid_22
+    400030: Pyramid_4
+    400032: Pyramid_6
+    400034: Pyramid_8
+    400036: Pyramid_9
+    400038: //RootNode
+    400040: varsi
+    2000000: CINEMA_4D_Editor
+    2100000: No Name
+    2100002: Mat
+    2100004: Mat.1
+    2300000: middle
+    2300002: middle_1
+    2300004: Pyramid
+    2300006: Pyramid_1
+    2300008: Pyramid_11
+    2300010: Pyramid_13
+    2300012: Pyramid_16
+    2300014: Pyramid_18
+    2300016: Pyramid_2
+    2300018: Pyramid_20
+    2300020: Pyramid_22
+    2300022: Pyramid_4
+    2300024: Pyramid_6
+    2300026: Pyramid_8
+    2300028: Pyramid_9
+    2300030: varsi
+    3300000: middle
+    3300002: middle_1
+    3300004: Pyramid
+    3300006: Pyramid_1
+    3300008: Pyramid_11
+    3300010: Pyramid_13
+    3300012: Pyramid_16
+    3300014: Pyramid_18
+    3300016: Pyramid_2
+    3300018: Pyramid_20
+    3300020: Pyramid_22
+    3300022: Pyramid_4
+    3300024: Pyramid_6
+    3300026: Pyramid_8
+    3300028: Pyramid_9
+    3300030: varsi
+    4300000: Pyramid_22
+    4300002: Pyramid_20
+    4300004: Pyramid_18
+    4300006: Pyramid_16
+    4300008: Pyramid_8
+    4300010: Pyramid_13
+    4300012: Pyramid_11
+    4300014: Pyramid_9
+    4300016: Pyramid_6
+    4300018: Pyramid_4
+    4300020: Pyramid_2
+    4300022: Pyramid_1
+    4300024: Pyramid
+    4300026: middle
+    4300028: middle_1
+    4300030: varsi
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
