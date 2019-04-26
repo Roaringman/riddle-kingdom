@@ -6,11 +6,6 @@ public class Somethingrandom : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+        Debug.Log("Hello Wilma and Kikko");
 	}
 }
