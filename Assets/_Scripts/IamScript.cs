@@ -6,6 +6,8 @@ public class IamScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        Debug.Log("HEJ ROAR og WILMA!?!");
 		
 	}
 	
