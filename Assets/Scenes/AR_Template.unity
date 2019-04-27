@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -199,6 +199,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4694056304383076, guid: 6baba202b5cc7954193562351570ad62, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198379067318554, guid: 6baba202b5cc7954193562351570ad62, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1689,6 +1693,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1747030157760962, guid: 0ff07ad2c7f9337489d2f7559b172d5d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ff07ad2c7f9337489d2f7559b172d5d, type: 2}
   m_IsPrefabAsset: 0
@@ -1715,11 +1723,16 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 945932145}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88cde23e7498d134a9800ef178d995c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 172e52312a5af3c4abfc1a4b428e8011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tree: {fileID: 0}
+  seed: {fileID: 0}
+  treeHoneyComb: {fileID: 0}
+  quest1: {fileID: 0}
+  yesButton: {fileID: 0}
 --- !u!4 &945932147
 Transform:
   m_ObjectHideFlags: 0
