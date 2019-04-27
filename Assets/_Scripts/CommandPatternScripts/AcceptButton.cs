@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace CommandPattern
 {
-    public class OpenNoticeMessage : Command
-    {
 
+    public class AcceptButton : Command
+    {
         // Use this for initialization
         public override void Execute(GameObject spawnPrefab, Command command)
         {
@@ -15,15 +15,17 @@ namespace CommandPattern
 
             //Save the command
             InputHandler.oldCommands.Add(command);
+
+            InteractWithButton(spawnPrefab);
         }
 
 
-        public override void Place(GameObject quest)        
+        public void InteractWithButton(GameObject quest)
         {
-            Debug.Log("Hello World");
-            Instantiate(quest); 
-
+            Debug.Log("You accepted the quest!");
+            Destroy(quest.transform.parent.gameObject);
+            //quest.transform.parent.gameObject.SetActive(false);
+            //GameObject.Find("Quest 1Notice(Clone)").SetActive(false); 
         }
-    }
-    
+    }   
 }

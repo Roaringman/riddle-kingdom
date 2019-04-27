@@ -10,7 +10,7 @@ namespace CommandPattern
         //The box we control with keys
         //public Transform boxTrans;
 
-        public GameObject tree, seed, treeHoneyComb, quest1;
+        public GameObject tree, seed, treeHoneyComb, quest1, yesButton;
         [SerializeField]
         public static float spawnDistance = 6.5f;
 
@@ -77,7 +77,6 @@ namespace CommandPattern
         {
             buttonUndo.Execute(tree, buttonUndo);
         }
-
 
         //Checks if we should start the replay
         void StartReplay(GameObject replayer)
