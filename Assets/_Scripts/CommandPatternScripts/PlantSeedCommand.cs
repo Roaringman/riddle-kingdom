@@ -35,7 +35,9 @@ namespace CommandPattern
             onGroundSpawn.Set(spawnPos.x, 0f, spawnPos.z);
 
             Instantiate(spawnPrefab, onGroundSpawn, Quaternion.Euler(0, 90, 0));
+
         }
-    }
+
+     }
 
 }
