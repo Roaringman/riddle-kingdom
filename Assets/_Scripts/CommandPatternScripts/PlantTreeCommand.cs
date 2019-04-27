@@ -8,6 +8,7 @@ namespace CommandPattern
     public class PlantTreeCommand : Command
     {
         Vector3 onGroundSpawn;
+
         //Called when we press a key
         public override void Execute(GameObject spawnPrefab, Command command)
         {
@@ -21,7 +22,7 @@ namespace CommandPattern
         //Undo an old command
         public override void Undo(GameObject spawnPrefab)
         {
-           //TODO: Turn off gameobject
+            
         }
 
         //Move the box
