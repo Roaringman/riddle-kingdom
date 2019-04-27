@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 
@@ -8,6 +7,7 @@ namespace CommandPattern
     public class PlantTreeCommand : Command
     {
         Vector3 onGroundSpawn;
+        Transform treeParent = GameObject.Find("TreeParent").transform;
 
         //Called when we press a key
         public override void Execute(GameObject spawnPrefab, Command command)
@@ -35,8 +35,9 @@ namespace CommandPattern
             Vector3 spawnPos = playerPos + playerDirection * InputHandler.spawnDistance;
             onGroundSpawn.Set(spawnPos.x, 0f, spawnPos.z);
 
-            Instantiate(spawnPrefab, onGroundSpawn, Quaternion.Euler(0, 90, 0));
+            Instantiate(spawnPrefab, onGroundSpawn, Quaternion.Euler(0, 90, 0), treeParent);
+
+          
         }
     }
-
 }
