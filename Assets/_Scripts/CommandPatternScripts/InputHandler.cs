@@ -15,7 +15,7 @@ namespace CommandPattern
         public static float spawnDistance = 6.5f;
 
         //The different keys we need
-        private Command buttonSeed, buttonTree, buttonTreeHoneyComb, buttonOpenNoticeMessage;//, buttonR;
+        private Command buttonSeed, buttonTree, buttonTreeHoneyComb, buttonOpenNoticeMessage, buttonUndo;
         //Stores all commands for replay and undo
         public static List<Command> oldCommands = new List<Command>();
         //Box start position to know where replay begins
@@ -33,7 +33,8 @@ namespace CommandPattern
             buttonSeed = new PlantSeedCommand();
             buttonTree = new PlantTreeCommand();
             buttonTreeHoneyComb = new PlantTreeHoneyCombCommand();
-            buttonOpenNoticeMessage = new OpenNoticeMessage(); 
+            buttonOpenNoticeMessage = new OpenNoticeMessage();
+            buttonUndo = new UndoCommand();
             //buttonR = new ReplayCommand();
 
             //boxStartPos = boxTrans.position;
@@ -70,6 +71,11 @@ namespace CommandPattern
         public void OpenNoticeMessage()
         {
             buttonOpenNoticeMessage.Execute(quest1, buttonOpenNoticeMessage); 
+        }
+
+        public void UndoCommand()
+        {
+            buttonUndo.Execute(tree, buttonUndo);
         }
 
 
