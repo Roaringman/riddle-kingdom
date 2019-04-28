@@ -18,8 +18,6 @@ namespace CommandPattern
         //Send notifications if something has happened
         public void Notify(Vector3 avgPos)
         {
-
-            Debug.Log("Notifying!");
             for (int i = 0; i < observers.Count; i++)
             {
                 //Notify all observers even though some may not be interested in what has happened
