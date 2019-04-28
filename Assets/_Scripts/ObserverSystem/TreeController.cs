@@ -32,7 +32,8 @@ namespace CommandPattern
                 notified = true;
                 foreach (Transform child in ObservedObject)
                 {
-                    CloudObserver childObj = new CloudObserver(child.gameObject, new CloudLerp());
+                    var cloudObj = child.gameObject;
+                    CloudObserver childObj = new CloudObserver(cloudObj.transform.Find("cloud").gameObject, new CloudLerp());
 
                     x += child.position.x;
                     z += child.position.z;

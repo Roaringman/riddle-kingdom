@@ -30,7 +30,6 @@ namespace CommandPattern
         public void AddObserver(Observer observer)
         {
             observers.Add(observer);
-            
         }
 
         //Remove observer from the list

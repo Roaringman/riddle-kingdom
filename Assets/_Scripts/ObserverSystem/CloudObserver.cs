@@ -11,6 +11,7 @@ namespace CommandPattern
         //What will happen when this box gets an event
         CloudEvents cloudEvent;
         GameObject rainCloudParent;
+        GameObject rainCloudChild;
 
         public CloudObserver(GameObject cloudObj, CloudEvents cloudEvent)
         {
@@ -22,21 +23,33 @@ namespace CommandPattern
         {
             float speed = cloudEvent.GetLerpSpeed();
             rainCloudParent = GameObject.Find("RainCloudParent");
+            rainCloudChild = rainCloudParent.transform.Find("cloud").gameObject;
 
             //rainCloudObj = rainCloudParent.transform.Find("RainCloud").gameObject;
 
-            Debug.Log(rainCloudParent.activeSelf);
+
             Vector3 endPos = avgPos;
 
             var seq = LeanTween.sequence();
             seq.append(1f); // delay everything one second
-            seq.append(LeanTween.move(this.cloudObj, endPos, speed).setEase(LeanTweenType.easeOutQuad)); // do a tween
+            seq.append(LeanTween.move(this.cloudObj, endPos, speed).setEase(LeanTweenType.easeInQuint)); // do a tween
+
+            seq.append(() =>
+            { // fire event after tween
+                this.cloudObj.gameObject.SetActive(false);
+            });
+
             seq.append(() => { // fire event after tween
-                /*if (!rainCloudObj.activeSelf)
+                if (!rainCloudChild.activeSelf)
                 {
-                    rainCloudObj.transform.position = endPos;
-                    rainCloudObj.SetActive(true);
-                }*/
+                    rainCloudParent.transform.position = endPos;
+                    rainCloudParent.transform.position += new Vector3(0,2f,0);
+                    rainCloudChild.SetActive(true);
+                } else
+                {
+                    rainCloudChild.transform.localScale += new Vector3(1f, 1f, 1f);
+                    rainCloudChild.transform.position += new Vector3(0, 1f, 0);
+                }
             }); 
 
         }
