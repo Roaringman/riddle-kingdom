@@ -1240,7 +1240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1814353035338962
 GameObject:
   m_ObjectHideFlags: 1
@@ -5887,6 +5887,7 @@ MonoBehaviour:
   turnOnBtn: {fileID: 0}
   bee: {fileID: 1185992235246532, guid: 47d4a57b260b69d4684f4f6d04aa6cc8, type: 2}
   newItem: {fileID: 1580907382203858}
+  part: {fileID: 1812938748386326}
   growFactor: 1.5
 --- !u!135 &135112043654014120
 SphereCollider:

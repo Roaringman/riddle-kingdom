@@ -17,6 +17,7 @@ public class CloudScript : MonoBehaviour {
     public GameObject turnOnBtn;
     public GameObject bee;
     public GameObject newItem;
+    public GameObject part; 
 
     public float growFactor= 1.5f; 
 
@@ -27,8 +28,9 @@ public class CloudScript : MonoBehaviour {
        clouds.SetActive(false);
        rain.gameObject.SetActive(false);
         TriggerCLoudEvent();
+        part.SetActive(false);
 
-        
+
 
     }
 	
@@ -86,6 +88,8 @@ public class CloudScript : MonoBehaviour {
         {
             LeanTween.scale(newItem, new Vector3(0.2f, 0.2f, 0.2f), growFactor)
                 .setEaseInOutBounce();
+
+            part.SetActive(true);
 
             gameManager.GetComponent<GameManager>().HoneyButton();
         }
