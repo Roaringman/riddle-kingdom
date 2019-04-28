@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class LittleBearScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    private AnimationClip anim; 
+
+    // Use this for initialization
+    void Start () {
+
+        
+
+    }
 
 
     public void Sleep()
     {
 
-        gameObject.GetComponent<Animator>().Play("Sleep"); 
+       // anim.Play("Be_Eat");
 
     }
 
