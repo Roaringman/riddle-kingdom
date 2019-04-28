@@ -17,8 +17,6 @@ public class CloudScript : MonoBehaviour {
     public GameObject turnOnBtn;
     public GameObject bee;
     public GameObject newItem;
- 
-    
 
     public float growFactor= 1.5f; 
 
@@ -56,6 +54,8 @@ public class CloudScript : MonoBehaviour {
 
     IEnumerator RainEvent() {
 
+        GameObject gameManager = GameObject.Find("Game Manager"); 
+
         yield return new WaitForSeconds(6);
         rain.gameObject.SetActive(true);
 
@@ -80,8 +80,15 @@ public class CloudScript : MonoBehaviour {
 
         yield return new WaitForSeconds(2.0f);
 
-        LeanTween.scale(newItem, new Vector3(0.2f, 0.2f, 0.2f), growFactor)
-            .setEaseInOutBounce();
+        
+
+        if (gameManager.GetComponent<GameManager>().honeyButtonActive == false)
+        {
+            LeanTween.scale(newItem, new Vector3(0.2f, 0.2f, 0.2f), growFactor)
+                .setEaseInOutBounce();
+
+            gameManager.GetComponent<GameManager>().HoneyButton();
+        }
 
         turnOnBtn.GetComponent<turnOnButton>().flipVisibility();
 
@@ -99,12 +106,10 @@ public class CloudScript : MonoBehaviour {
         Instantiate(bee, spawnPos, Quaternion.identity);
     }
 
-    public void AddHoneyButton() {
+    public void AddHoneyButton()
+    {
 
-        //honeyButton.SetActive(false);
-        GameObject.Find("Game Manager").GetComponent<PlaceHoneycomb>().TurnOnButton(); 
-
-
+        GameObject.Find("Game Manager").GetComponent<PlaceHoneycomb>().TurnOnButton();
 
     }
 }
