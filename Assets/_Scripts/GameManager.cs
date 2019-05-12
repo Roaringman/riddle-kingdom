@@ -6,12 +6,14 @@ public class GameManager : MonoBehaviour {
 
     public bool honeyButtonActive = false;
     public GameObject sendMessageButton;
-    public GameObject youWon; 
+    public GameObject youWon;
+    public GameObject seedsButton; 
 
     public void Start()
     {
         sendMessageButton.SetActive(false);
-        youWon.SetActive(false); 
+        youWon.SetActive(false);
+        seedsButton.SetActive(false); 
     }
 
     public void HoneyButton()
@@ -28,6 +30,12 @@ public class GameManager : MonoBehaviour {
     public void EndOfGame()
     {
         youWon.SetActive(true); 
+
+    }
+
+    public void SeedsButton()
+    {
+        seedsButton.SetActive(true);
 
     }
 }
