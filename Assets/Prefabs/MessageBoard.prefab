@@ -1519,7 +1519,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1040360108235086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.193, y: 0.797, z: -0.647}
+  m_LocalPosition: {x: 0.193, y: 0.139, z: -0.647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4328455496172802}
@@ -2010,7 +2010,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1823810398271894}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.199, y: 0.465, z: -0.509}
+  m_LocalPosition: {x: 0.199, y: -0.19299999, z: -0.509}
   m_LocalScale: {x: 3, y: 3, z: 2}
   m_Children:
   - {fileID: 4979200120082478}
@@ -3670,7 +3670,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 401411e9be938b348b670df2d3039c49, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5464,7 +5464,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1877701598086110}
-  m_Text: Get bear fur?
+  m_Text: "Hj\xE6lp s\xF8ges"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -5534,7 +5534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tag: buttonOutlineColor
-  Default: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  Default: {r: 0.011764707, g: 0.054901965, b: 0.5764706, a: 1}
   Focus: {r: 0.28627452, g: 0.28627452, b: 0.28627452, a: 1}
   Press: {r: 0.28627452, g: 0.28627452, b: 0.28627452, a: 1}
   Selected: {r: 0.06666667, g: 0.6117647, b: 0.8745098, a: 1}
@@ -5656,6 +5656,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnDownEvent:
@@ -5727,6 +5738,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1823810398271894}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnHoldEvent:
@@ -5764,7 +5786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tag: buttonLabelColor
-  Default: {r: 0.2509804, g: 0.2509804, b: 0.2509804, a: 1}
+  Default: {r: 1, g: 1, b: 1, a: 1}
   Focus: {r: 0.2509804, g: 0.2509804, b: 0.2509804, a: 1}
   Press: {r: 0.2509804, g: 0.2509804, b: 0.2509804, a: 1}
   Selected: {r: 0.8352941, g: 0.94509804, b: 1, a: 1}
@@ -5786,7 +5808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tag: buttonBackgroundColor
-  Default: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  Default: {r: 0.011764707, g: 0.054901965, b: 0.5764706, a: 1}
   Focus: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
   Press: {r: 0.7019608, g: 0.7019608, b: 0.7019608, a: 1}
   Selected: {r: 0.06666667, g: 0.6117647, b: 0.8745098, a: 1}
@@ -5824,8 +5846,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tag: defaultColor
-  Default: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-  Focus: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
+  Default: {r: 0.011764707, g: 0.054901965, b: 0.5764706, a: 1}
+  Focus: {r: 0.011764707, g: 0.054901965, b: 0.5764706, a: 1}
   Press: {r: 0.7019608, g: 0.7019608, b: 0.7019608, a: 1}
   Selected: {r: 0.06666667, g: 0.6117647, b: 0.8745098, a: 1}
   FocusSelected: {r: 0.29411766, g: 0.7607843, b: 0.9843137, a: 1}

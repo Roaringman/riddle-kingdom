@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour {
     public bool honeyButtonActive = false;
     public GameObject sendMessageButton;
     public GameObject youWon;
-    public GameObject seedsButton; 
+    public GameObject seedsButton;
+
+    public int count = 0; 
 
     public void Start()
     {
@@ -18,7 +20,23 @@ public class GameManager : MonoBehaviour {
 
     public void HoneyButton()
     {
-        honeyButtonActive = true; 
+
+            honeyButtonActive = true;
+
+    }
+
+    public void HoneyCounter()
+    {
+        if (count < 1)
+        {
+            count++;
+        }
+
+        else if (count == 1)
+        {
+            honeyButtonActive = false;
+            count = 0;
+        }
     }
 
     public void ActivateSendMessageButton()
