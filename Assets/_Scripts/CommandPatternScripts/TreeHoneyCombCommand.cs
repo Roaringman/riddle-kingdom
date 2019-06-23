@@ -33,7 +33,7 @@ namespace CommandPattern
             Vector3 spawnPos = playerPos + playerDirection * InputHandler.spawnDistance;
             onGroundSpawn.Set(spawnPos.x, 0f, spawnPos.z);
 
-            Instantiate(spawnPrefab, onGroundSpawn, Quaternion.Euler(0, 90, 0));
+            Instantiate(spawnPrefab, onGroundSpawn, Quaternion.Euler(0, 270, 0));
         }
     }
 }
