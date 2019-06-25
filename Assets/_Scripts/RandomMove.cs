@@ -14,15 +14,14 @@ public class RandomMove : MonoBehaviour {
 
     void Start()
     {
-        baseAreaVector = baseArea.transform.position; 
-        PositionChange();
-        
+        baseAreaVector = baseArea.transform.position;
+        newPosition = new Vector3(Random.Range(baseAreaVector.x - changeSpeed, baseAreaVector.x + changeSpeed), Random.Range(baseAreaVector.y, baseAreaVector.y + changeSpeed), Random.Range(baseAreaVector.z - changeSpeed, baseAreaVector.z + changeSpeed));
+
     }
 
     void PositionChange()
     {
         newPosition = new Vector3(Random.Range(baseAreaVector.x - changeSpeed, baseAreaVector.x + changeSpeed), Random.Range(baseAreaVector.y - changeSpeed, baseAreaVector.y + changeSpeed), Random.Range(baseAreaVector.z - changeSpeed, baseAreaVector.z + changeSpeed));
-        Debug.Log(newPosition);
     }
 
     void Update()
