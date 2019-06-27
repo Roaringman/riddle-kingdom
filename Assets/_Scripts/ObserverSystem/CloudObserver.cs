@@ -11,47 +11,86 @@ namespace CommandPattern
         //What will happen when this box gets an event
         CloudEvents cloudEvent;
         GameObject rainCloudParent;
-        GameObject rainCloudChild;
+        RainCloud rainCloudChild;
+        GameObject[] rainyDays;
+        GameObject targetSeeds;
+        Vector3 endPos;
+        CloudScript rainCloudPrefab;
+        int seedIndex = 0;
+        static int merges = 0;
 
         public CloudObserver(GameObject cloudObj, CloudEvents cloudEvent)
         {
             this.cloudObj = cloudObj;
             this.cloudEvent = cloudEvent;
+            rainCloudParent = GameObject.Find("RainCloudParent");
+
+            rainCloudChild =  new RainCloud(rainCloudParent.transform.Find("cloud").gameObject);
+            Debug.Log(rainCloudChild.cloud.name);
         }
 
         public override void OnNotify(Vector3 avgPos)
         {
             float speed = cloudEvent.GetLerpSpeed();
-            rainCloudParent = GameObject.Find("RainCloudParent");
-            rainCloudChild = rainCloudParent.transform.Find("cloud").gameObject;
+            rainyDays = FindGameObjectsWithName("RainyDay(Clone)");
+            //TODO: Move original seed object rather than creating clones?
+ 
 
-            //rainCloudObj = rainCloudParent.transform.Find("RainCloud").gameObject;
-
-
-            Vector3 endPos = avgPos;
+            if (rainyDays[seedIndex] != null)
+            {
+                rainCloudPrefab = (CloudScript)rainyDays[seedIndex].GetComponent(typeof(CloudScript));
+                endPos = new Vector3 (rainCloudPrefab.transform.position.x, 2.61f, rainCloudPrefab.transform.position.z);
+                
+            }
+            else
+            {
+                 endPos = avgPos;
+            }
 
             var seq = LeanTween.sequence();
-            seq.append(1f); // delay everything one second
-            seq.append(LeanTween.move(this.cloudObj, endPos, speed).setEase(LeanTweenType.easeInQuint)); // do a tween
+            seq.append(0.5f); // delay everything
+            seq.append(LeanTween.move(this.cloudObj, endPos, speed).setEase(LeanTweenType.easeOutQuad)); // do a tween
 
             seq.append(() =>
             { // fire event after tween
                 this.cloudObj.gameObject.SetActive(false);
+                merges += 1;
+                if (merges == 5)
+                {
+                    rainCloudPrefab.TriggerCLoudEvent();
+                }
+         
             });
 
             seq.append(() => { // fire event after tween
-                if (!rainCloudChild.activeSelf)
+                if (rainCloudChild.activeState == false)
                 {
                     rainCloudParent.transform.position = endPos;
                     rainCloudParent.transform.position += new Vector3(0,2f,0);
-                    rainCloudChild.SetActive(true);
+                    rainCloudChild.activeState = true;
                 } else
                 {
-                    rainCloudChild.transform.localScale += new Vector3(1f, 1f, 1f);
-                    rainCloudChild.transform.position += new Vector3(0, 1f, 0);
+                    rainCloudChild.cloud.transform.localScale += new Vector3(1f, 1f, 1f);
+                    rainCloudChild.cloud.transform.position += new Vector3(0, 1f, 0);
                 }
             }); 
+        }
 
+        GameObject[] FindGameObjectsWithName(string name)
+        {
+            GameObject[] gameObjects = GameObject.FindObjectsOfType<GameObject>();
+            GameObject[] arr = new GameObject[gameObjects.Length];
+            int FluentNumber = 0;
+            for (int i = 0; i < gameObjects.Length; i++)
+            {
+                if (gameObjects[i].name == name)
+                {
+                    arr[FluentNumber] = gameObjects[i];
+                    FluentNumber++;
+                }
+            }
+            Array.Resize(ref arr, FluentNumber);
+            return arr;
         }
     }
 }

@@ -23,15 +23,9 @@ public class CloudScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
-        
        clouds.SetActive(false);
        rain.gameObject.SetActive(false);
-        TriggerCLoudEvent();
         part.SetActive(false);
-
-
-
     }
 	
 	// Update is called once per frame
@@ -117,5 +111,11 @@ public class CloudScript : MonoBehaviour {
 
         GameObject.Find("Game Manager").GetComponent<PlaceHoneycomb>().TurnOnButton();
 
+    }
+
+
+    public Vector3 getCloudPosition()
+    {
+        return cloudPosition.transform.position;
     }
 }
