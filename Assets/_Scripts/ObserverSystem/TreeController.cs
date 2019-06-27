@@ -44,6 +44,13 @@ namespace CommandPattern
                 z = z / ObservedObject.childCount;
                 subject.Notify(new Vector3(x,0f,z));
                 
+            } 
+
+            if(ObservedObject.childCount % 5 != 0 && notified)
+            {
+                notified = false;
+
+
             }
         }
     }
