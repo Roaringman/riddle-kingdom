@@ -17,6 +17,8 @@ public class Dragespil : MonoBehaviour {
     public GameObject dragon8;
     public GameObject dragon9;
     public Animator chest;
+    public AudioSource chest_open;
+    public AudioSource dragon_laugh; 
 
     private int clicCounter = 0; 
 
@@ -55,12 +57,14 @@ public class Dragespil : MonoBehaviour {
 
         if(clicCounter == 0) { 
             StartCoroutine(DragonStart(dragon1, dragon2, dragon3, dragon4));
+            StartCoroutine(OpenSound());
             chest.Play("Shake");
         }
 
         if (clicCounter == 1)
         {
             StartCoroutine(DragonStart(dragonA, dragonB, dragonC, dragonD));
+            StartCoroutine(OpenSound());
             chest.Play("Shake");
             //dragon1.SetActive(false);
             //dragon2.SetActive(false);
@@ -71,6 +75,7 @@ public class Dragespil : MonoBehaviour {
         if (clicCounter == 2)
         {
             StartCoroutine(DragonStart(dragon6, dragon7, dragon8, dragon9));
+            StartCoroutine(OpenSound());
             chest.Play("Shake");
             //dragonA.SetActive(false);
             //dragonB.SetActive(false);
@@ -111,5 +116,13 @@ public class Dragespil : MonoBehaviour {
     IEnumerator Shake() {
         yield return new WaitForSeconds(1f);
         chest.Play("Singel Shake");
+    }
+
+    IEnumerator OpenSound() {
+        chest_open.Play();
+
+        yield return new WaitForSeconds(0.8f);
+
+        dragon_laugh.Play(); 
     }
 }
