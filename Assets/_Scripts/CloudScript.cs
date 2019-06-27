@@ -94,7 +94,9 @@ public class CloudScript : MonoBehaviour {
             gameManager.GetComponent<GameManager>().HoneyButton();
         }
 
-        turnOnBtn.GetComponent<turnOnButton>().flipVisibility();
+        gameManager.GetComponent<GameManager>().HoneyCounter(); 
+
+        //turnOnBtn.GetComponent<turnOnButton>().flipVisibility();
 
     }
 

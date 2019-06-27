@@ -12,7 +12,7 @@ namespace CommandPattern
 
         public GameObject tree, seed, treeHoneyComb, quest1, yesButton;
         [SerializeField]
-        public static float spawnDistance = 6.5f;
+        public static float spawnDistance = 3f;
 
         //The different keys we need
         private Command buttonSeed, buttonTree, buttonTreeHoneyComb, buttonOpenNoticeMessage, buttonUndo;

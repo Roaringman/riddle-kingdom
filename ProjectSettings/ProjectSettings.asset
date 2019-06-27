@@ -618,13 +618,13 @@ PlayerSettings:
       CodeGeneration: False
       Contacts: False
       EnterpriseAuthentication: False
-      HumanInterfaceDevice: False
+      HumanInterfaceDevice: True
       InputInjectionBrokered: False
       InternetClient: False
       InternetClientServer: False
       Location: False
       LowLevelDevices: False
-      Microphone: False
+      Microphone: True
       MusicLibrary: False
       Objects3D: False
       OfflineMapsManagement: False
@@ -645,7 +645,7 @@ PlayerSettings:
       UserNotificationListener: False
       VideosLibrary: False
       VoipCall: False
-      WebCam: False
+      WebCam: True
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 

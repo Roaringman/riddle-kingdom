@@ -279,7 +279,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 636cd3603c4bfcd4e8a12d4f6fb90c89, type: 2}
+  - {fileID: 2100000, guid: b6d66a049eb2bd445bf2883bb793e0ed, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -410,10 +410,10 @@ TextMesh:
   m_Anchor: 4
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 42
+  m_FontSize: 70
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 86574c70442309b45be5a1c37a37a40b, type: 3}
+  m_Font: {fileID: 12800000, guid: b6d66a049eb2bd445bf2883bb793e0ed, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4282400832
@@ -429,8 +429,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tag: buttonBackgroundColor
-  Default: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-  Focus: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
+  Default: {r: 0.89019614, g: 0.8941177, b: 0.1137255, a: 1}
+  Focus: {r: 0.89019614, g: 0.8941177, b: 0.1137255, a: 1}
   Press: {r: 0.7019608, g: 0.7019608, b: 0.7019608, a: 1}
   Selected: {r: 0.06666667, g: 0.6117647, b: 0.8745098, a: 1}
   FocusSelected: {r: 0.29411766, g: 0.7607843, b: 0.9843137, a: 1}
@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8661165567bf4a4897114efb13a8c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Default: Place Honeycomb
+  Default: Placer bikube
   Selected: 
 --- !u!114 &114220459289026670
 MonoBehaviour:
@@ -638,8 +638,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tag: defaultColor
-  Default: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-  Focus: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
+  Default: {r: 0.89019614, g: 0.8941177, b: 0.1137255, a: 1}
+  Focus: {r: 0.89019614, g: 0.8941177, b: 0.1137255, a: 1}
   Press: {r: 0.7019608, g: 0.7019608, b: 0.7019608, a: 1}
   Selected: {r: 0.06666667, g: 0.6117647, b: 0.8745098, a: 1}
   FocusSelected: {r: 0.29411766, g: 0.7607843, b: 0.9843137, a: 1}
@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tag: buttonOutlineColor
-  Default: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  Default: {r: 0.89019614, g: 0.8941177, b: 0.1137255, a: 1}
   Focus: {r: 0.28627452, g: 0.28627452, b: 0.28627452, a: 1}
   Press: {r: 0.28627452, g: 0.28627452, b: 0.28627452, a: 1}
   Selected: {r: 0.06666667, g: 0.6117647, b: 0.8745098, a: 1}
