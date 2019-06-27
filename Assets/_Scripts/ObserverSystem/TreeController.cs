@@ -26,8 +26,7 @@ namespace CommandPattern
         {
             var x = 0f;
             var z = 0f;
-            //The boxes should jump if the sphere is cose to origo
-            if (ObservedObject.childCount == 5 && !notified)
+            if (ObservedObject.childCount > 0 && ObservedObject.childCount % 5 == 0 && !notified)
             {
                 notified = true;
                 foreach (Transform child in ObservedObject)
@@ -37,7 +36,6 @@ namespace CommandPattern
 
                     x += child.position.x;
                     z += child.position.z;
-
 
                     subject.AddObserver(childObj);
                 }

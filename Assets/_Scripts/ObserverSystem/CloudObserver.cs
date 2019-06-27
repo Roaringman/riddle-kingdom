@@ -12,9 +12,12 @@ namespace CommandPattern
         CloudEvents cloudEvent;
         GameObject rainCloudParent;
         RainCloud rainCloudChild;
-
-
-        int test = 0;
+        GameObject[] rainyDays;
+        GameObject targetSeeds;
+        Vector3 endPos;
+        CloudScript rainCloudPrefab;
+        int seedIndex = 0;
+        static int merges = 0;
 
         public CloudObserver(GameObject cloudObj, CloudEvents cloudEvent)
         {
@@ -29,49 +32,65 @@ namespace CommandPattern
         public override void OnNotify(Vector3 avgPos)
         {
             float speed = cloudEvent.GetLerpSpeed();
+            rainyDays = FindGameObjectsWithName("RainyDay(Clone)");
+            //TODO: Move original seed object rather than creating clones?
+ 
 
-            
-
-            //rainCloudObj = rainCloudParent.transform.Find("RainCloud").gameObject;
-
-
-            Vector3 endPos = avgPos;
+            if (rainyDays[seedIndex] != null)
+            {
+                rainCloudPrefab = (CloudScript)rainyDays[seedIndex].GetComponent(typeof(CloudScript));
+                endPos = new Vector3 (rainCloudPrefab.transform.position.x, 2.61f, rainCloudPrefab.transform.position.z);
+                
+            }
+            else
+            {
+                 endPos = avgPos;
+            }
 
             var seq = LeanTween.sequence();
-            seq.append(0.5f); // delay everything one second
-            seq.append(LeanTween.move(this.cloudObj, endPos, speed).setEase(LeanTweenType.easeInQuint)); // do a tween
+            seq.append(0.5f); // delay everything
+            seq.append(LeanTween.move(this.cloudObj, endPos, speed).setEase(LeanTweenType.easeOutQuad)); // do a tween
 
             seq.append(() =>
             { // fire event after tween
                 this.cloudObj.gameObject.SetActive(false);
-                rainCloudChild.merges = 1;
-                Debug.Log(rainCloudChild.merges);
-                tester();
+                merges += 1;
+                if (merges == 5)
+                {
+                    rainCloudPrefab.TriggerCLoudEvent();
+                }
+         
             });
 
             seq.append(() => { // fire event after tween
                 if (rainCloudChild.activeState == false)
                 {
-                    Debug.Log(rainCloudChild.activeState);
                     rainCloudParent.transform.position = endPos;
                     rainCloudParent.transform.position += new Vector3(0,2f,0);
                     rainCloudChild.activeState = true;
                 } else
                 {
-                    Debug.Log(rainCloudChild.activeState);
                     rainCloudChild.cloud.transform.localScale += new Vector3(1f, 1f, 1f);
                     rainCloudChild.cloud.transform.position += new Vector3(0, 1f, 0);
                 }
             }); 
-
-
-
         }
 
-        void tester()
+        GameObject[] FindGameObjectsWithName(string name)
         {
-            test += test  + 1;
-            Debug.Log(test);
+            GameObject[] gameObjects = GameObject.FindObjectsOfType<GameObject>();
+            GameObject[] arr = new GameObject[gameObjects.Length];
+            int FluentNumber = 0;
+            for (int i = 0; i < gameObjects.Length; i++)
+            {
+                if (gameObjects[i].name == name)
+                {
+                    arr[FluentNumber] = gameObjects[i];
+                    FluentNumber++;
+                }
+            }
+            Array.Resize(ref arr, FluentNumber);
+            return arr;
         }
     }
 }
